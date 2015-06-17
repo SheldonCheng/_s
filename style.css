@@ -14,6 +14,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 _s is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -22,29 +23,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 Normalize
-2.0 Typography
-3.0 Elements
-4.0 Forms
-5.0 Navigation
-	5.1 Links
-	5.2 Menus
-6.0 Accessibility
-7.0 Alignments
-8.0 Clearings
-9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Infinite scroll
-12.0 Media
-	12.1 Captions
-	12.2 Galleries
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-1.0 Normalize
+# Normalize
 --------------------------------------------------------------*/
 html {
 	font-family: sans-serif;
@@ -263,7 +264,7 @@ th {
 }
 
 /*--------------------------------------------------------------
-2.0 Typography
+# Typography
 --------------------------------------------------------------*/
 body,
 button,
@@ -342,7 +343,7 @@ big {
 }
 
 /*--------------------------------------------------------------
-3.0 Elements
+# Elements
 --------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
@@ -415,7 +416,7 @@ table {
 }
 
 /*--------------------------------------------------------------
-4.0 Forms
+# Forms
 --------------------------------------------------------------*/
 button,
 input[type="button"],
@@ -488,10 +489,10 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-5.0 Navigation
+# Navigation
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-5.1 Links
+## Links
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
@@ -517,7 +518,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-5.2 Menus
+## Menus
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
@@ -527,6 +528,7 @@ a:active {
 }
 
 .main-navigation ul {
+	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -564,20 +566,25 @@ a:active {
 
 }
 
-.main-navigation li:hover > a {
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
 }
 
-.main-navigation ul ul :hover > a {
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
 }
 
-.main-navigation ul ul a:hover {
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
 }
 
-.main-navigation ul li:hover > ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
 	left: auto;
 }
 
-.main-navigation ul ul li:hover > ul {
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 
@@ -587,18 +594,17 @@ a:active {
 }
 
 /* Small menu. */
-.menu-toggle {
-	display: none;
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
 		display: none;
+	}
+	.main-navigation ul {
+		display: block;
 	}
 }
 
@@ -625,7 +631,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-6.0 Accessibility
+# Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -636,8 +642,6 @@ a:active {
 	overflow: hidden;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -659,7 +663,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-7.0 Alignments
+# Alignments
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
@@ -681,7 +685,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-8.0 Clearings
+# Clearings
 --------------------------------------------------------------*/
 .clear:before,
 .clear:after,
@@ -709,7 +713,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-9.0 Widgets
+# Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
@@ -726,10 +730,10 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.0 Content
+# Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-10.1 Posts and pages
+## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 	display: block;
@@ -761,7 +765,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.2 Asides
+## Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -769,7 +773,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.3 Comments
+## Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -780,7 +784,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
+# Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
@@ -794,7 +798,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-12.0 Media
+# Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -813,7 +817,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.1 Captions
+## Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -834,7 +838,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.2 Galleries
+## Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
